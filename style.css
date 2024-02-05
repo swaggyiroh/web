@@ -219,7 +219,7 @@ body {
 
 .terminal {
     /*Terminal*/
-    /*visibility: hidden;*/
+    visibility: hidden;
     position: absolute;
     left: 10%;
     width: 40%;
