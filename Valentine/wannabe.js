@@ -1,8 +1,8 @@
 function movebutton() {
     let target = document.getElementById("sadje");
 
-    var w = window.innerWidth - 50;
-    var h = window.innerHeight - 50;
+    var w = window.innerWidth - 100;
+    var h = window.innerHeight - 100;
 
 
     let tP = Math.random() * (0 - h) + h;
