@@ -45,6 +45,7 @@ button:hover {
 }
 
 div button {
+    color:"black";
     font-size: 40px;
     align-self: center;
     background-image: none;
