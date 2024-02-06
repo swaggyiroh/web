@@ -45,7 +45,7 @@ button:hover {
 }
 
 div button {
-    color:"black";
+
     font-size: 40px;
     align-self: center;
     background-image: none;
@@ -57,7 +57,7 @@ div button {
     border-width: 2px;
     box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
     box-sizing: border-box;
-    color: #41403e;
+    color: "black";
     cursor: pointer;
     display: inline-block;
     font-family: Neucha, sans-serif;
