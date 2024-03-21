@@ -149,11 +149,11 @@ ul li a:hover span:nth-child(4) {
 }
 
 .steam:hover {
-  color: #00ADEE;
+  color: #171D25;
 }
 
 .steam:hover span {
-  background: #00ADEE;
+  background: #171D25;
 }
 
 .github:hover {
