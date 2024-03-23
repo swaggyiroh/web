@@ -43,8 +43,8 @@
     </div>
 
     <ul>
-        <li class="slide-in-bck-bl">
-            <a class="discord" href="https://discord.gg/GDXTeKh5EU"target="_blank">
+        <li class="slide-in-bck-bl" onclick="copyToClipboard('swaggyiroh')">
+            <a class="discord">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -52,6 +52,17 @@
                 <i class="fa fa-discord" aria-hidden="true"></i>
             </a>
         </li>
+        <script>
+            function copyToClipboard(text) {
+                const el = document.createElement('textarea');
+                el.value = text;
+                document.body.appendChild(el);
+                el.select();
+                document.execCommand('copy');
+                document.body.removeChild(el);
+                alert('Text wurde in die Zwischenablage kopiert: ' + text);
+            }
+        </script>
         <li class="slide-in-bck-bl">
             <a class="twitter" href="https://twitter.com/swaggyiroh"target="_blank">
                 <span></span>
