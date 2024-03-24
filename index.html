@@ -18,9 +18,18 @@
         <span></span>
     </div>
 
-    <div id="fontfamily" class="Name tracking-in-contract-bck">
-        <h1>Dominik<blink>_</blink>
-        </h1>
+
+    <div titel="Dominik" id="fontfamily" class="Name tracking-in-contract-bck">
+        <h1 id="1" class="" data-glitch="Dominik">Dominik</h1>
+    </div>
+        <script>
+            var glitch = Math.random() < 0.5;
+            if (glitch){
+                document.getElementById("1").classList.add("glitch")
+            }else{
+                document.getElementById("1").innerHTML += '<blink>_</blink>'
+            }
+        </script>
         <script>
             const fonts = [
                 '"Roboto Mono", monospace',
