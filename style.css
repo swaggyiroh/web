@@ -22,16 +22,7 @@
   supported by Chrome, Edge, Opera and Firefox */
 }
 
-.qr-code {
-   position: absolute;
-   top: 15%; /* Adjust as needed */
-   right: calc(50% - 2.5vw); /* Adjust as needed */
-   transform: translateY(-50%);
-   width: 5vw;
-   height: 5vw;
-   opacity: 0;
- }
- 
+
 
 
 #icon {
