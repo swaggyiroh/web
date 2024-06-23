@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Dominik</title>
-    <link rel="icon" type="image/x-icon" href="/images/icon/favicon.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dominik</title>
+    <link rel="icon" type="image/x-icon" href="/images/icon/favicon.ico">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css" integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Extended+Text&display=swap" rel="stylesheet">
     <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
+        document.addEventListener('DOMContentLoaded', () => {
             const colors = ['#6D8DB8', '#000000', '#191919'];
-            const randomColor = colors[Math.floor(Math.random() * colors.length)];
-            document.body.style.backgroundColor = randomColor;
+            document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
         });
+        function copyToClipboard(text) {
+            const el = document.createElement('textarea');
+            el.value = text;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+            alert('Copied Name to Clipboard: ' + text);
+        }
     </script>
 </head>
 <body>
@@ -26,57 +31,31 @@
     <ul>
         <li class="slide-in-bck-bl" onclick="copyToClipboard('swaggyiroh')">
             <a class="discord">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span><span></span>
                 <i class="fa fa-discord" aria-hidden="true"></i>
             </a>
         </li>
-        <script>
-            function copyToClipboard(text) {
-                const el = document.createElement('textarea');
-                el.value = text;
-                document.body.appendChild(el);
-                el.select();
-                document.execCommand('copy');
-                document.body.removeChild(el);
-                alert('Copied Name to Clipboard: ' + text);
-            }
-        </script>
         <li class="slide-in-bck-bl">
             <a class="twitter" href="https://twitter.com/swaggyiroh" target="_blank">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span><span></span>
                 <i class="fa fa-twitter" aria-hidden="true"></i>
             </a>
         </li>
         <li class="slide-in-bck-bottom">
             <a class="steam" href="https://steamcommunity.com/id/dodom2002" target="_blank">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span><span></span>
                 <i class="fa fa-steam" aria-hidden="true"></i>
             </a>
         </li>
         <li class="slide-in-bck-br">
             <a class="github" href="https://github.com/swaggyiroh" target="_blank">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span><span></span>
                 <i class="fa fa-github" aria-hidden="true"></i>
             </a>
         </li>
         <li class="slide-in-bck-br">
             <a class="spotify" href="https://open.spotify.com/user/dodom2002" target="_blank">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span><span></span>
                 <i class="fa fa-spotify" aria-hidden="true"></i>
             </a>
         </li>
