@@ -29,7 +29,13 @@
 
 <body>
 
-    <p id="demo" class="Timer"></p>
+    <p id="timer" style="
+    position: absolute;
+   left : 5vw;
+   top:5vh;
+   padding: 0;
+   font-size: 2vh;
+   color: white;"></p>
     <script>
         let year = new Date().getFullYear().toString();
 
@@ -53,13 +59,8 @@
             var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+            document.getElementById("timer").innerHTML = days + "d " + hours + "h "
                 + minutes + "m " + seconds + "s ";
-
-            if (distance < 0) {
-                clearInterval(x);
-                document.getElementById("demo").innerHTML = "EXPIRED";
-            }
         }, 1000);
 
     </script>

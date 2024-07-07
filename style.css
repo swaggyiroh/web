@@ -3,14 +3,7 @@ body {
    margin: 0;
    overflow-x: hidden;
 }
-.Timer{
-   position: absolute;
-   left : 5vw;
-   top:5vh;
-   padding: 0;
-   font-size: 2vh;
-   color: white;
-}
+
 
 .Name {
    font-optical-sizing: auto;
