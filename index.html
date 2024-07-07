@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dominik</title>
     <link rel="icon" type="image/x-icon" href="/images/icon/favicon.ico">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css" integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css"
+        integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Extended+Text&display=swap" rel="stylesheet">
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -24,7 +26,44 @@
         }
     </script>
 </head>
+
 <body>
+
+    <p id="demo" class="Timer"></p>
+    <script>
+        let year = new Date().getFullYear().toString();
+
+        let sep24 = new Date("Sep 24, " + year);
+        let now = new Date();
+
+        if (now > sep24) {
+            let y = parseInt(year);
+            year = (++y).toString(); // Increment year
+        }
+
+        var countDownDate = new Date("Sep 24, " + year).getTime();
+
+        var x = setInterval(function () {
+            var now = new Date().getTime();
+
+            var distance = countDownDate - now;
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+                + minutes + "m " + seconds + "s ";
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("demo").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+
+    </script>
+
     <div title="Dominik" class="Name">
         <h1 class="barcode" data-glitch="Dominik">Dominik</h1>
     </div>
@@ -61,4 +100,5 @@
         </li>
     </ul>
 </body>
+
 </html>
