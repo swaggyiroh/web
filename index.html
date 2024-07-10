@@ -8,62 +8,15 @@
     <link rel="icon" type="image/x-icon" href="/images/icon/favicon.ico">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css"
-        integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous">
+        integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous">    
     <link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Extended+Text&display=swap" rel="stylesheet">
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const colors = ['#6D8DB8', '#000000', '#191919'];
-            document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-        });
-        function copyToClipboard(text) {
-            const el = document.createElement('textarea');
-            el.value = text;
-            document.body.appendChild(el);
-            el.select();
-            document.execCommand('copy');
-            document.body.removeChild(el);
-            alert('Copied Name to Clipboard: ' + text);
-        }
-    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
 </head>
 
 <body>
 
-    <p id="timer" style="
-    position: absolute;
-   left : 5vw;
-   top:5vh;
-   padding: 0;
-   font-size: 2vh;
-   color: white;"></p>
-    <script>
-        let year = new Date().getFullYear().toString();
-
-        let sep24 = new Date("Sep 24, " + year);
-        let now = new Date();
-
-        if (now > sep24) {
-            let y = parseInt(year);
-            year = (++y).toString(); // Increment year
-        }
-
-        var countDownDate = new Date("Sep 24, " + year).getTime();
-
-        var x = setInterval(function () {
-            var now = new Date().getTime();
-
-            var distance = countDownDate - now;
-
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById("timer").innerHTML = days + "d " + hours + "h "
-                + minutes + "m " + seconds + "s ";
-        }, 1000);
-
-    </script>
+    <p id="timer" class="TIMER"p></p>
 
     <div title="Dominik" class="Name">
         <h1 class="barcode" data-glitch="Dominik">Dominik</h1>

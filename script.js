@@ -1,28 +1,49 @@
-        // Set the date we're counting down to
-        var countDownDate = new Date("Sep 25, 2024").getTime();
 
-        // Update the count down every 1 second
-        var x = setInterval(function () {
 
-            // Get today's date and time
-            var now = new Date().getTime();
+document.addEventListener('DOMContentLoaded', () => {
+    const colors = ['#6D8DB8', '#000000', '#191919'];
+    document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+});
 
-            // Find the distance between now and the count down date
-            var distance = countDownDate - now;
 
-            // Time calculations for days, hours, minutes and seconds
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+function copyToClipboard(text) {
+    const el = document.createElement('textarea');
+    el.value = text;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+    alert('Copied Name to Clipboard: ' + text);
+}
 
-            // Display the result in the element with id="demo"
-            document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-                + minutes + "m " + seconds + "s ";
 
-            // If the count down is finished, write some text
-            if (distance < 0) {
-                clearInterval(x);
-                document.getElementById("demo").innerHTML = "EXPIRED";
-            }
-        }, 1000);
+//B-Day Timer:----------
+
+function timer() {
+    var year = new Date().getFullYear().toString();
+    var now = new Date();
+
+    if (now > new Date("Sep 24, " + year)) {
+        var y = parseInt(year);
+        year = (++y).toString(); 
+    }
+
+    var countDownDate = new Date("Sep 24, " + year).getTime();
+    var nowInMs = new Date().getTime();
+
+    var distance = countDownDate - nowInMs;
+
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("timer").innerHTML = days + " : " + hours + " : "
+        + minutes + " : " + seconds + " ";
+}
+
+// Run the timer function every second to update the countdown
+setInterval(timer, 1000);
+
+
+//--------------------------
