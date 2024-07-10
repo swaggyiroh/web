@@ -1,0 +1,331 @@
+body {
+   background-color: rgba(41, 87, 151, 0.677);
+   margin: 0;
+   overflow-x: hidden;
+}
+
+.TIMER{
+   font-family: "Orbitron", sans-serif;
+   font-optical-sizing: auto;
+   font-style: normal;
+
+   position: absolute;
+   left : 5vw;
+   top:5vh;
+   padding: 0;
+   font-size: 2vh;
+   color: white;
+}
+
+.Name {
+   font-optical-sizing: auto;
+   font-size: 4vw;
+   color: #fff;
+   text-align: center;
+   padding: 15vh;
+   text-shadow: 0px 0px 16px #000;
+   height: 15vh;
+   user-select: none;
+}
+
+.barcode {
+   font-family: "Libre Barcode 39 Extended Text", system-ui;
+   font-weight: 400;
+   font-style: normal;
+}
+
+ul {
+   position: absolute;
+   top: 55vh;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   margin: 0;
+   padding: 0;
+   display: flex;
+}
+
+ul li {
+   list-style: none;
+}
+
+ul li a {
+   display: block;
+   position: relative;
+   width: 5vw;
+   height: 10vh;
+   line-height: 10vh;
+   font-size: 2vw;
+   text-align: center;
+   margin-top: 30vh;
+   text-decoration: none;
+   color: #fff;
+   text-shadow: 2px 1px 1px #000;
+   margin: 2vh;
+   transition: .5s;
+}
+
+ul li a span {
+   position: absolute;
+   transition: transform .5s;
+}
+
+ul li a span:nth-child(1),
+ul li a span:nth-child(3) {
+   width: 100%;
+   height: 0.2vh;
+   background: #fff;
+}
+
+ul li a span:nth-child(1) {
+   top: 0;
+   left: 0;
+   transform-origin: right;
+}
+
+ul li a:hover span:nth-child(1) {
+   transform: scaleX(0);
+   transform-origin: left;
+}
+
+ul li a span:nth-child(3) {
+   bottom: 0;
+   left: 0;
+   transform-origin: left;
+}
+
+ul li a:hover span:nth-child(3) {
+   transform: scaleX(0);
+   transform-origin: right;
+}
+
+ul li a span:nth-child(2),
+ul li a span:nth-child(4) {
+   width: 0.1vw;
+   height: 100%;
+   background: #fff;
+}
+
+ul li a span:nth-child(2) {
+   top: 0;
+   left: 0;
+   transform: scale(0);
+   transform-origin: bottom;
+}
+
+ul li a:hover span:nth-child(2) {
+   transform: scale(1);
+   transform-origin: top;
+}
+
+ul li a span:nth-child(4) {
+   top: 0;
+   right: 0;
+   transform: scale(0);
+   transform-origin: top;
+}
+
+ul li a:hover span:nth-child(4) {
+   transform: scale(1);
+   transform-origin: bottom;
+}
+
+.discord:hover {
+   color: #5865F2;
+}
+
+.discord:hover span {
+   background: #5865F2;
+}
+
+.twitter:hover {
+   color: #1da1f2;
+}
+
+.twitter:hover span {
+   background: #1da1f2;
+}
+
+.steam:hover {
+   color: #00ADEE;
+}
+
+.steam:hover span {
+   background: #00ADEE;
+}
+
+.github:hover {
+   color: #fff;
+}
+
+.github:hover span {
+   background: #fff;
+}
+
+.spotify:hover {
+   color: #1DB954;
+}
+
+.spotify:hover span {
+   background: #1DB954;
+}
+
+.tracking-in-contract-bck {
+   animation: tracking-in-contract-bck 1s cubic-bezier(.215, .61, .355, 1.000) both;
+}
+
+@keyframes tracking-in-contract-bck {
+   0% {
+       letter-spacing: 1em;
+       transform: translateZ(400px);
+       opacity: 0;
+   }
+   40% {
+       opacity: .6;
+   }
+   100% {
+       transform: translateZ(0);
+       opacity: 1;
+   }
+}
+
+.slide-in-bck-bl {
+   animation: slide-in-bck-bl .6s cubic-bezier(.25, .46, .45, .94) both;
+}
+
+@keyframes slide-in-bck-bl {
+   0% {
+       transform: translateZ(700px) translateY(300px) translateX(-400px);
+       opacity: 0;
+   }
+   100% {
+       transform: translateZ(0) translateY(0) translateX(0);
+       opacity: 1;
+   }
+}
+
+.slide-in-bck-bottom {
+   animation: slide-in-bck-bottom .6s cubic-bezier(.25, .46, .45, .94) both;
+}
+
+@keyframes slide-in-bck-bottom {
+   0% {
+       transform: translateZ(700px) translateY(300px);
+       opacity: 0;
+   }
+   100% {
+       transform: translateZ(0) translateY(0);
+       opacity: 1;
+   }
+}
+
+.slide-in-bck-br {
+   animation: slide-in-bck-br .6s cubic-bezier(.25, .46, .45, .94) both;
+}
+
+@keyframes slide-in-bck-br {
+   0% {
+       transform: translateZ(700px) translateY(300px) translateX(400px);
+       opacity: 0;
+   }
+   100% {
+       transform: translateZ(0) translateY(0) translateX(0);
+       opacity: 1;
+   }
+}
+
+.bg {
+   position: fixed;
+   top: -50%;
+   left: -50%;
+   right: -50%;
+   bottom: -50%;
+   width: 200%;
+   height: 200vh;
+   background: transparent url('https://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+   background-repeat: repeat;
+   animation: bg-animation .2s infinite;
+   opacity: .9;
+   visibility: visible;
+   z-index: 1;
+   mix-blend-mode: multiply;
+   pointer-events: none;
+}
+
+@keyframes bg-animation {
+   0% {
+       transform: translate(0, 0);
+   }
+   10% {
+       transform: translate(-5%, -5%);
+   }
+   20% {
+       transform: translate(-10%, 5%);
+   }
+   30% {
+       transform: translate(5%, -10%);
+   }
+   40% {
+       transform: translate(-5%, 15%);
+   }
+   50% {
+       transform: translate(-10%, 5%);
+   }
+   60% {
+       transform: translate(15%, 0);
+   }
+   70% {
+       transform: translate(0, 10%);
+   }
+   80% {
+       transform: translate(-15%, 0);
+   }
+   90% {
+       transform: translate(10%, 5%);
+   }
+   100% {
+       transform: translate(5%, 0);
+   }
+}
+
+@keyframes noise-before {
+   0%, 25%, 50%, 75%, 100% {
+       clip: rect(26px, 9999px, 33px, 0);
+   }
+   5%, 30% {
+       clip: rect(140px, 9999px, 198px, 0);
+   }
+   10%, 35% {
+       clip: rect(184px, 9999px, 89px, 0);
+   }
+   15%, 40% {
+       clip: rect(188px, 9999px, 154px, 0);
+   }
+   20%, 45% {
+       clip: rect(117px, 9999px, 166px, 0);
+   }
+   55% {
+       clip: rect(133px, 9999px, 195px, 0);
+   }
+   60% {
+       clip: rect(102px, 9999px, 179px, 0);
+   }
+   65% {
+       clip: rect(194px, 9999px, 127px, 0);
+   }
+   70% {
+       clip: rect(103px, 9999px, 135px, 0);
+   }
+   80% {
+       clip: rect(100px, 9999px, 112px, 0);
+   }
+   85% {
+       clip: rect(26px, 9999px, 33px, 0);
+   }
+   90% {
+       clip: rect(183px, 9999px, 114px, 0);
+   }
+   95% {
+       clip: rect(197px, 9999px, 140px, 0);
+   }
+}
+

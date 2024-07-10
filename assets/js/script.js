@@ -3,8 +3,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     const colors = ['#6D8DB8', '#000000', '#191919'];
     document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-});
 
+
+});
 
 
 //Copy Discord username to clipboard
@@ -23,11 +24,10 @@ function copyToClipboard(text) {
 
 function timer() {
     var year = new Date().getFullYear().toString();
-    var now = new Date();
 
-    if (now > new Date("Sep 24, " + year)) {
+    if (new Date() > new Date("Sep 24, " + year)) {
         var y = parseInt(year);
-        year = (++y).toString(); 
+        year = (++y).toString();
     }
 
     var countDownDate = new Date("Sep 24, " + year).getTime();
@@ -41,10 +41,9 @@ function timer() {
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
     document.getElementById("timer").innerHTML = days + " : " + hours + " : "
-        + minutes + " : " + seconds + " ";
+        + minutes + " : " + seconds;
 }
 
-// Run the timer function every second to update the countdown
 setInterval(timer, 1000);
 
 
