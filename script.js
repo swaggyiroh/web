@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-Copy Discord username to clipboard
+//Copy Discord username to clipboard
 function copyToClipboard(text) {
     const el = document.createElement('textarea');
     el.value = text;
