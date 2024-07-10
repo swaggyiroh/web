@@ -1,11 +1,13 @@
 
-
+// Random BG-Color
 document.addEventListener('DOMContentLoaded', () => {
     const colors = ['#6D8DB8', '#000000', '#191919'];
     document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
 });
 
 
+
+Copy Discord username to clipboard
 function copyToClipboard(text) {
     const el = document.createElement('textarea');
     el.value = text;
