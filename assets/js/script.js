@@ -2,9 +2,7 @@
 // Random BG-Color
 document.addEventListener('DOMContentLoaded', () => {
     const colors = ['#6D8DB8', '#000000', '#191919'];
-    document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-
-
+    document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];s
 });
 
 
