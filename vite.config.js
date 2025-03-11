@@ -7,7 +7,8 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 // 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/web/',
+  base: '/web',
+
   plugins: [
     vue(),
     vueDevTools(),
