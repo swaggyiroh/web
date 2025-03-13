@@ -7,7 +7,7 @@ defineProps({
         type: String,
         default: 'Name'
     },
-    text: {
+    color: {
         type: String,
         default: 'text-black'
     }
@@ -19,7 +19,7 @@ defineProps({
 
 <template>
 
-    <h1 :class="[text, 'text-6xl', 'font-bold', 'font-zendots', 'inline-block','select-none']">
+    <h1 :class="[color, 'text-8xl', 'font-bold', 'font-zendots', 'inline-block','select-none']">
         {{ name }}
     </h1>
 
