@@ -4,7 +4,7 @@ import Items from '@/components/Items.vue';
 import Timer from '@/components/Timer.vue';
 import { ref, computed, onMounted, onUnmounted } from 'vue';
 
-const bg = ref(60);
+const bg = ref((Math.random() * 360));
 let intervalId = null;
 
 onMounted(() => {
