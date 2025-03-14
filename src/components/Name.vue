@@ -19,7 +19,7 @@ defineProps({
 
 <template>
 
-    <h1 :class="[color, 'text-8xl', 'font-bold', 'font-zendots', 'inline-block','select-none']">
+    <h1 :class="[color, 'text-8xl', 'font-bold', 'font-zendots', 'inline-block','select-none','shadow-2xl']">
         {{ name }}
     </h1>
 
