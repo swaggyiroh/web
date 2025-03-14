@@ -28,7 +28,7 @@ const dynamicBackground = computed(() => {
 
 <template>
 
-<Snow v-if="snowy"/>
+  <Snow v-if="snowy"/>
 
   <Timer class="text-xl pl-2" />
   <div 
