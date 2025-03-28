@@ -2,13 +2,13 @@
 import { ref, computed } from "vue";
 import Home from "./Home.vue";
 import Cool from "./CoolStuff.vue";
-import Sozial from "./Sozial.vue";
+import Social from "./Social.vue";
 import Idk from "./Idk.vue";
 
 const routes = {
   "/": Home,
   "/cool": Cool,
-  "/sozial": Sozial,
+  "/social": Social,
   "/idk": Idk
 };
 
