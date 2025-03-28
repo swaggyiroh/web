@@ -26,10 +26,10 @@ const updateTimer = (countDownDate) => {
   const nowInMs = new Date().getTime();
   const distance = countDownDate - nowInMs;
 
-  days.value = String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(3, '0');
-  hours.value = String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(3, '0');
-  minutes.value = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(3, '0');
-  seconds.value = String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(3, '0');
+  days.value = String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(2, '0');
+  hours.value = String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+  minutes.value = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+  seconds.value = String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2, '0');
 };
 
 
