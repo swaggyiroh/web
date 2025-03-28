@@ -36,7 +36,7 @@ const currentView = computed(() => {
       <p>}</p>
 
       <p>{</p>
-      <a href="#/social" class="nav-item" :class="{ 'active': currentPath === '/sozial' }">sozial</a>
+      <a href="#/social" class="nav-item" :class="{ 'active': currentPath === '/social' }">social</a>
       <p>}</p>
 
       <p>{</p>
