@@ -14,17 +14,21 @@ const steam = 'https://steamcommunity.com/id/dodom2002';
         <a :href="twitter" class="hover:text-blue-500">
             <font-awesome-icon :icon="['fab', 'twitter']" size="2x" />
         </a>
-        <a :href="github" class="hover:text-gray-700">
+
+        <a :href="github" class="hover:text-black">
             <font-awesome-icon :icon="['fab', 'github']" size="2x" />
         </a>
+
         <a @click="faCopy(swaggyiroh)" class="hover:text-indigo-500">
             <font-awesome-icon :icon="['fab', 'discord']" size="2x" />
         </a>
+
         <a :href="spotify" class="hover:text-green-500">
             <font-awesome-icon :icon="['fab', 'spotify']" size="2x" />
         </a>
-        <a :href="steam" class="hover:text-slate-800">
-            <font-awesome-icon :icon="['fab', 'steam']" size="2x"  />
+
+        <a :href="steam" class="hover:text-slate-700">
+            <font-awesome-icon :icon="['fab', 'steam']" size="2x" />
         </a>
 
     </div>
@@ -32,6 +36,7 @@ const steam = 'https://steamcommunity.com/id/dodom2002';
 </template>
 
 <style>
+
 a {
     color: white;
 }

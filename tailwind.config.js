@@ -6,6 +6,7 @@ export default {
       fontFamily:{
         zendots: ['Zen Dots','sans-serif'],
         doto: ['Doto', 'sans-serif'],
+        vt323:['VT323', 'sans-serif']
       }
     },
     gridTemplateColumns: {
