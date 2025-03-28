@@ -1,5 +1,5 @@
 # !/bin/bash
-
+npm run buil
 cd dist
 echo 'swaggyiroh.com' >> CNAME
 git add .
