@@ -1,7 +1,6 @@
 <script setup>
 
 import Header from '@/components/Header.vue'
-import Home from '@/components/Home.vue'
 import Timer from '@/components/Timer.vue'
 
 

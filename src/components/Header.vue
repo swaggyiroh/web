@@ -26,7 +26,7 @@ const currentView = computed(() => {
 
 <template>
   <div class="select-none flex justify-center text-white relative">
-    <div class="flex gap-5 p-10 text-4xl drop-shadow-2xl font-vt323">
+    <div class="flex gap-5 p-10 text-4xl drop-shadow-2xl font-vt323 ">
       <p>{</p>
       <a href="#/" class="nav-item" :class="{ 'active': currentPath === '/' }">home</a>
       <p>}</p>
@@ -36,7 +36,7 @@ const currentView = computed(() => {
       <p>}</p>
 
       <p>{</p>
-      <a href="#/sozial" class="nav-item" :class="{ 'active': currentPath === '/sozial' }">sozial</a>
+      <a href="#/social" class="nav-item" :class="{ 'active': currentPath === '/sozial' }">sozial</a>
       <p>}</p>
 
       <p>{</p>
@@ -49,6 +49,8 @@ const currentView = computed(() => {
 </template>
 
 <style scoped>
+
+
 
 .nav-item {
   @apply relative cursor-pointer transition duration-200;
@@ -65,6 +67,5 @@ const currentView = computed(() => {
 .active::after {
   @apply scale-x-100;
 }
-
 
 </style>

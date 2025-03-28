@@ -6,21 +6,11 @@ const twitter = 'https://x.com/swaggyiroh';
 const github = 'https://github.com/swaggyiroh';
 const spotify = 'https://open.spotify.com/user/dodom2002';
 const steam = 'https://steamcommunity.com/id/dodom2002';
-
+const discord = 'https://discord.com/users/284979744372424715'
 // Define the Discord handle or ID that you want to copy
 const discordHandle = 'swaggyiroh';
 
-// Define the faCopy method
-const faCopy = async (text: string) => {
-  try {
-    // Use the Clipboard API to write the text to the clipboard
-    await navigator.clipboard.writeText(text);
-    alert(`Copied to clipboard: ${text}`); // Show a success message (can be customized)
-  } catch (err) {
-    console.error('Failed to copy: ', err);
-    alert('Failed to copy!'); // Show an error message if the copy failed
-  }
-};
+
 </script>
 
 <template>
@@ -36,7 +26,7 @@ const faCopy = async (text: string) => {
     </a>
 
     <!-- Discord Link (with copy functionality) -->
-    <a @click="faCopy(discordHandle)" class="hover:text-indigo-500">
+    <a :href="discord" target="_blank" class="hover:text-indigo-500">
       <font-awesome-icon :icon="['fab', 'discord']" size="2x" />
     </a>
 
