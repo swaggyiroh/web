@@ -4,9 +4,9 @@
 <template>
 
 
-    <div>
-
-        <h1>TEST</h1>
+    <div class="flex justify-center items-center">
+        <img src="https://media.tenor.com/x8v1oNUOmg4AAAAM/rickroll-roll.gif">
+        
         
     </div>
 </template>

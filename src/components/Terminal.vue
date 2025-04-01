@@ -100,8 +100,8 @@ const executeCommand = () => {
 
 <template>
   <div class="flex flex-col justify-center items-center w-screen">
-    <div class="w-full max-w-6xl mx-auto bg-gray-700 text-white font-vt323 p-4 rounded-lg text-xl">
-      <div class="border-b border-green-500 pb-2 mb-2 flex space-x-1 justify-end">
+    <div class="w-full max-w-6xl mx-auto bg-black text-white font-vt323 p-4 rounded-lg text-xl">
+      <div class="border-b border-gray-700 pb-2 mb-2 flex space-x-1 justify-end">
         <div class="bg-red h-5 w-5 border text-white text-center text-xs hover:bg-gray-500">_</div>
         <div class="bg-red h-5 w-5 border text-white text-center pt-px text-xs hover:bg-gray-500">☐</div>
         <div class="bg-red h-5 w-5 border text-white text-center text-xs hover:bg-red-700">X</div>

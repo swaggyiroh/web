@@ -12,6 +12,11 @@ const routes = {
   "/idk": Idk
 };
 
+const navigate = (path: string) => {
+  window.location.hash = path;
+  currentPath.value = path;
+};
+
 const currentPath = ref(window.location.hash.slice(1) || "/");
 
 window.addEventListener("hashchange", () => {
@@ -28,19 +33,19 @@ const currentView = computed(() => {
   <div class="select-none flex justify-center text-white relative">
     <div class="flex gap-5 p-10 text-4xl drop-shadow-2xl font-vt323 ">
       <p>{</p>
-      <a href="#/" class="nav-item" :class="{ 'active': currentPath === '/' }">home</a>
+      <span @click="navigate('/')" class="nav-item" :class="{ 'active': currentPath === '/' }">home</span>
       <p>}</p>
 
       <p>{</p>
-      <a href="#/cool" class="nav-item" :class="{ 'active': currentPath === '/cool' }">coolStuffIMade</a>
+      <span @click="navigate('/cool')" class="nav-item" :class="{ 'active': currentPath === '/cool' }">coolStuffIMade</span>
       <p>}</p>
 
       <p>{</p>
-      <a href="#/social" class="nav-item" :class="{ 'active': currentPath === '/social' }">social</a>
+      <span @click="navigate('/social')" class="nav-item" :class="{ 'active': currentPath === '/social' }">social</span>
       <p>}</p>
 
       <p>{</p>
-      <a href="#/idk" class="nav-item" :class="{ 'active': currentPath === '/idk' }">idk</a>
+      <span @click="navigate('/idk')" class="nav-item" :class="{ 'active': currentPath === '/idk' }">idk</span>
       <p>}</p>
     </div>
   </div>
