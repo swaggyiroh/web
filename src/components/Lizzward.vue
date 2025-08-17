@@ -1,7 +1,9 @@
 <script setup>
+import lizardSound from '@/audio/lizard.mp3'
+
 function playSound() {
-  const sound = new Audio('/src/audio/lizard.mp3')
-  sound.play()
+  const audio = new Audio(lizardSound)
+  audio.play()
 }
 </script>
 
@@ -16,6 +18,6 @@ function playSound() {
 
 <style scoped>
 div:active {
-  @apply scale-95 shadow-2xl shadow-black ;
+  @apply scale-95 shadow-2xl shadow-black;
 }
 </style>
