@@ -2,8 +2,10 @@
 import { ref } from 'vue'
 import Terminal from './Terminal.vue'
 import Lizzward from './Lizzward.vue'
+import Love from './Love.vue'
 
-type DisplayComponent = 'text' | 'terminal' | 'lizzward'
+
+type DisplayComponent = 'text' | 'terminal' | 'lizzward' | 'love'
 
 const activeComponent = ref<DisplayComponent>('text')
 
@@ -19,9 +21,11 @@ function toggleComponent(component: DisplayComponent) {
             class="pb-60 flex flex-wrap justify-center items-center font-vt323 text-3xl text-white select-none h-screen w-10/12 gap-20 p-10">
 
             <div class="rainbow h-fit w-11/12 flex justify-center items-center text-8xl ">
-                <h1 v-if="activeComponent === 'text'">WOW OMG</h1>
+                <h1 v-if="activeComponent === 'text'">[WOW,OMG]</h1>
                 <Terminal v-else-if="activeComponent === 'terminal'" />
                 <Lizzward v-else-if="activeComponent === 'lizzward'" />
+                <Love v-else-if="activeComponent === 'love'" />
+
             </div>
 
 
@@ -33,7 +37,9 @@ function toggleComponent(component: DisplayComponent) {
                 <h1>🦎</h1>
             </div>
 
-            <div class="item"></div>
+            <div class="item" @click="toggleComponent('love')">
+                <h1>❤️?</h1>
+            </div>
             <div class="item"></div>
             <div class="item"></div>
             <div class="item"></div>
