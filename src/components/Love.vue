@@ -38,7 +38,8 @@ function sayYes() {
 
                     <button class="bg-red-600 px-6 py-2 rounded-lg relative z-0"
                         :style="{ transform: noButtonTransform, transition: 'transform 0.2s ease' }"
-                        @mouseover="moveNoButton">
+                        @mouseover="moveNoButton" @click="moveNoButton">
+                        
                         No
                     </button>
 
