@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, nextTick, onMounted } from 'vue';
-import mark from '@/assets/mark.jpg'
+
 const command = ref('');
 const output = ref(['']);
 const currentDir = ref('~');
@@ -25,15 +25,21 @@ cats.set("twitter", '<a class="underline" href="https://x.com/swaggyiroh" target
 cats.set("github", '<a class="underline" href="https://github.com/swaggyiroh" target="_blank">https://github.com/swaggyiroh</a>');
 
 const terminalOutput = ref<HTMLDivElement | null>(null);
-const marko = '<div class="flex flex-row items-center gap-10 whitespace-pre-line text-2xl">'+
-              '<img src=https://media.discordapp.net/attachments/1076096668124065863/1406951031308554250/rn_image_picker_lib_temp_0935e211-aec6-443c-893e-4eeee6ec4c15.jpg?ex=68a5a641&is=68a454c1&hm=a8fb5b0626c8a066de1b7b2bd124405ae76dddc68ec31d80172de29888bdefa9&=&format=webp&width=718&height=959 class="h-28 w-32">'+
-              '<h1>  this is mark </h1>'+
-              '</div>'
+const marko = '<div class="flex flex-row items-center gap-10 whitespace-pre-line text-2xl">' +
+  '<img src=https://media.discordapp.net/attachments/1076096668124065863/1406951031308554250/rn_image_picker_lib_temp_0935e211-aec6-443c-893e-4eeee6ec4c15.jpg?ex=68a5a641&is=68a454c1&hm=a8fb5b0626c8a066de1b7b2bd124405ae76dddc68ec31d80172de29888bdefa9&=&format=webp&width=718&height=959 class="h-28 w-32">' +
+  '<h1>  this is mark </h1>' +
+  '</div>';
 
-output.value.push(help)
+const nf = '<div class="flex flex-row items-center gap-10 whitespace-pre-line text-2xl"> ' +
+  '<img src="https://preview.redd.it/w5gj2wkqhrc51.png?width=160&format=png&auto=webp&s=92b68f9d2b5696e2810d4d245e9c754adcb1715e"</img>' +
+  '<div class="flex flex-col text-lg"> <h1>OS: Arch Linux</h1> <h1>DE: KDE</h1> <h1>CPU: AMD Ryzen 7 7700X 8-Core @ 16x 5.57857GHz</h1> <h1>GPU: NVIDIA GeForce RTX 4070 Ti</h1> <h1>RAM 1337/31197MiB</h1> </div>'
+'</div>'
+
+
+// output.value.push(help)
 const executeCommand = () => {
   const cmd = command.value.trim().split(' ');
-  
+
   output.value.push('<span class="text-white"><span class="text-green-500">visitor@github-pages</span>:<span class="text-blue-700">' + currentDir.value + '</span>$</span> ' + ' ' + command.value);
 
   switch (cmd[0]) {
@@ -76,6 +82,10 @@ const executeCommand = () => {
       break;
     case 'marko':
       output.value.push(marko);
+      break;
+    case 'nf':
+    case 'neofetch':
+      output.value.push(nf);
       break;
     default:
       output.value.push(`Command not found: ${cmd}`);
