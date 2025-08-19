@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, nextTick, onMounted } from 'vue';
-
+import mark from '@/assets/mark.jpg'
 const command = ref('');
 const output = ref(['']);
 const currentDir = ref('~');
@@ -25,6 +25,11 @@ cats.set("twitter", '<a class="underline" href="https://x.com/swaggyiroh" target
 cats.set("github", '<a class="underline" href="https://github.com/swaggyiroh" target="_blank">https://github.com/swaggyiroh</a>');
 
 const terminalOutput = ref<HTMLDivElement | null>(null);
+const marko = '<div class="flex flex-row items-center gap-10 whitespace-pre-line text-2xl">'+
+              '<img src=https://media.discordapp.net/attachments/1076096668124065863/1406951031308554250/rn_image_picker_lib_temp_0935e211-aec6-443c-893e-4eeee6ec4c15.jpg?ex=68a5a641&is=68a454c1&hm=a8fb5b0626c8a066de1b7b2bd124405ae76dddc68ec31d80172de29888bdefa9&=&format=webp&width=718&height=959 class="h-28 w-32">'+
+              '<h1>  this is mark </h1>'+
+              '</div>'
+
 output.value.push(help)
 const executeCommand = () => {
   const cmd = command.value.trim().split(' ');
@@ -68,6 +73,9 @@ const executeCommand = () => {
       break;
     case 'echo':
       output.value.push(cmd.slice(1).join(' '));
+      break;
+    case 'marko':
+      output.value.push(marko);
       break;
     default:
       output.value.push(`Command not found: ${cmd}`);
