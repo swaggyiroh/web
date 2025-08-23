@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, nextTick, onMounted } from 'vue';
 import mark from '@/assets/mark.jpg';
-
+import tux from '@/assets/tux.png';
 const command = ref('');
 const output = ref(['']);
 const currentDir = ref('~');
@@ -33,10 +33,10 @@ const marko = `
   </div>
 `;
 
-const nf = '<div class="flex flex-row items-center gap-10 whitespace-pre-line text-2xl"> ' +
-'<img :src="https://preview.redd.it/w5gj2wkqhrc51.png?width=160&format=png&auto=webp&s=92b68f9d2b5696e2810d4d245e9c754adcb1715e"</img>' +
+const nf = `<div class="flex flex-row items-center gap-10 whitespace-pre-line text-2xl"> ' +
+'<img src="${tux}"</img>' +
 '<div class="flex flex-col text-lg"> <h1>OS: Arch Linux</h1> <h1>DE: KDE</h1> <h1>CPU: AMD Ryzen 7 7700X 8-Core @ 16x 5.57857GHz</h1> <h1>GPU: NVIDIA GeForce RTX 4070 Ti</h1> <h1>RAM 1337/31197MiB</h1> </div>'
-'</div>'
+'</div>`
 
 const terminalOutput = ref<HTMLDivElement | null>(null);
 
