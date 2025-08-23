@@ -33,10 +33,16 @@ const marko = `
   </div>
 `;
 
-const nf = `<div class="flex flex-row items-center gap-10 whitespace-pre-line text-2xl"> ' +
-'<img src="${tux}"</img>' +
-'<div class="flex flex-col text-lg"> <h1>OS: Arch Linux</h1> <h1>DE: KDE</h1> <h1>CPU: AMD Ryzen 7 7700X 8-Core @ 16x 5.57857GHz</h1> <h1>GPU: NVIDIA GeForce RTX 4070 Ti</h1> <h1>RAM 1337/31197MiB</h1> </div>'
-'</div>`
+const nf = `
+<div class="flex flex-row items-center gap-10 whitespace-pre-line text-2xl"> 
+<img src="${tux}"</img>
+<div class="flex flex-col text-lg">
+<h1>OS: Arch Linux</h1> <h1>DE: KDE</h1>
+<h1>CPU: AMD Ryzen 7 7700X 8-Core @ 16x 5.57857GHz</h1>
+<h1>GPU: NVIDIA GeForce RTX 4070 Ti</h1>
+<h1>RAM 1337/31197MiB</h1>
+</div>
+</div>`
 
 const terminalOutput = ref<HTMLDivElement | null>(null);
 
