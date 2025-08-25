@@ -45,7 +45,7 @@ const nf = `
 </div>`
 
 const terminalOutput = ref<HTMLDivElement | null>(null);
-
+var counter = 0;
 // output.value.push(help)
 const executeCommand = () => {
   const cmd = command.value.trim().split(' ');
@@ -97,8 +97,16 @@ const executeCommand = () => {
     case 'neofetch':
       output.value.push(nf);
       break;
+    case '':
+      output.value.push('');
+      break;
     default:
       output.value.push(`Command not found: ${cmd}`);
+      counter++;
+      if(counter == 3){
+        counter = 0;
+        output.value.push(`Try using Help`);
+      }
       break;
   }
 
