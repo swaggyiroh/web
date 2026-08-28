@@ -41,10 +41,8 @@ onMounted(() => {
 
 
 <template>
-    <div>
-      <div id="timer" class="text-3xl font-vt323 text-white absolute p-10 select-none">
-        {{ days }} : {{ hours }} : {{ minutes }} : {{ seconds }}
+      <div id="timer">
+        [{{ days }} : {{ hours }} : {{ minutes }} : {{ seconds }}]
       </div>
-    </div>
 </template>
   
