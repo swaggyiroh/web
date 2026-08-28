@@ -3,12 +3,44 @@ import { ref, onMounted } from 'vue';
 import { useEventListener, useRafFn } from '@vueuse/core';
 import Timer from './components/Timer.vue';
 
-const colors = ["#f72585", "#b5179e", "#7209b7", "#560bad", "#480ca8", "#3a0ca3", "#3f37c9", "#4361ee", "#4895ef", "#4cc9f0"];
 
+const palletes = {
+
+  "purpleRaindrops": ["#f72585", "#b5179e", "#7209b7", "#560bad", "#480ca8", "#3a0ca3", "#3f37c9", "#4361ee", "#4895ef", "#4cc9f0"],
+  "deepSeaBlue": ["#0466c8", "#0353a4", "#023e7d", "#002855", "#001845", "#001233", "#33415c", "#5c677d", "#7d8597", "#979dac"],
+  "fieryRedSunset": ["#03071e", "#370617", "#6a040f", "#9d0208", "#d00000", "#dc2f02", "#e85d04", "#f48c06", "#faa307", "#ffba08"],
+
+
+}
+
+function getRandomPalletteEntry(palletes, current) {
+  const keys = Object.keys(palletes);
+  const remainingKeys = keys.filter((key) => key !== current);
+  const pallette = remainingKeys[Math.floor(Math.random() * remainingKeys.length)];
+  const colors = palletes[pallette];
+
+  return { pallette, colors };
+}
+
+
+const pallette = ref(getRandomPalletteEntry(palletes));
+
+
+
+console.log("Random Color palette ", pallette)
 const canvasRef = ref(null);
 let ctx;
 let colorIndex = 0;
 const dots = [];
+
+useEventListener(document, 'keydown', (evt) => {
+  if (evt.key === " ") {
+    pallette.value = getRandomPalletteEntry(palletes,pallette.value.pallette);
+    console.log("New Random Color palette ", pallette)
+  }
+
+  
+})  
 
 onMounted(() => {
   const canvas = canvasRef.value;
@@ -23,11 +55,12 @@ useEventListener(window, 'resize', () => {
 });
 
 useEventListener(document, 'mousemove', (evt) => {
-  dots.push({ x: evt.clientX, y: evt.clientY, color: colors[colorIndex], life: 1 });
-  colorIndex = (colorIndex + 1) % colors.length;
+  dots.push({ x: evt.clientX, y: evt.clientY, color: pallette.value.colors[colorIndex], life: 1 });
+  colorIndex = (colorIndex + 1) % pallette.value.colors.length;
 });
 
 useRafFn(() => {
+    if (!ctx) return;
   ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
   for (let i = dots.length - 1; i >= 0; i--) {
     const dot = dots[i];
@@ -49,18 +82,19 @@ useRafFn(() => {
 </script>
 
 <template>
-<div class="relative h-screen w-screen bg-black text-white overflow-hidden caacupe-one-regular select-none">
-  <canvas ref="canvasRef" class="absolute inset-0 pointer-events-none"></canvas>
+  <div class="relative h-screen w-screen bg-black text-white overflow-hidden caacupe-one-regular select-none">
+    <canvas ref="canvasRef" class="absolute inset-0 pointer-events-none"></canvas>
 
-  <div class="relative z-10 h-full flex flex-col items-center justify-center gap-0">
-    <div class="flex flex-row">
-      <span class="pt-3">Hi im </span>
-      <h1 class="text-9xl">Dominik</h1>
+    <div class="relative z-10 h-full flex flex-col items-center justify-center gap-0">
+      <div class="flex flex-row">
+        <span class="pt-3">Hi im </span>
+        <h1 class="text-9xl">Dominik</h1>
+      </div>
+      <h2>Full-Stack Developer from Germany</h2>
     </div>
-    <h2>Full-Stack Developer from Germany</h2>
-  </div>
 
-  <div class="absolute top-5 left-5 m-2 text-lg w-fit z-10">
-    <Timer />
+    <div class="absolute top-5 left-5 m-2 text-lg w-fit z-10">
+      <Timer />
+    </div>
   </div>
-</div></template>
+</template>
