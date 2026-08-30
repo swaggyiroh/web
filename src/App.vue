@@ -24,6 +24,7 @@ function getRandomPalletteEntry(palletes, current) {
 
 
 const pallette = ref(getRandomPalletteEntry(palletes));
+const size = ref(20);
 
 
 
@@ -35,12 +36,12 @@ const dots = [];
 
 useEventListener(document, 'keydown', (evt) => {
   if (evt.key === " ") {
-    pallette.value = getRandomPalletteEntry(palletes,pallette.value.pallette);
+    pallette.value = getRandomPalletteEntry(palletes, pallette.value.pallette);
     console.log("New Random Color palette ", pallette)
   }
 
-  
-})  
+
+})
 
 onMounted(() => {
   const canvas = canvasRef.value;
@@ -59,8 +60,24 @@ useEventListener(document, 'mousemove', (evt) => {
   colorIndex = (colorIndex + 1) % pallette.value.colors.length;
 });
 
+useEventListener(document, "wheel", (evt) => {
+  const { deltaY } = evt;
+
+  if (deltaY < 0) {
+    size.value += evt.shiftKey ? 10 : 1;
+  } else {
+    size.value = Math.max(1, size.value - (evt.shiftKey ? 10 : 1));
+  }
+})
+
+useEventListener(document,'keydown',(evt) => {
+    if(evt.key.toLowerCase() === 'r'){
+      size.value = 20
+    }
+})
+
 useRafFn(() => {
-    if (!ctx) return;
+  if (!ctx) return;
   ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
   for (let i = dots.length - 1; i >= 0; i--) {
     const dot = dots[i];
@@ -72,7 +89,7 @@ useRafFn(() => {
     ctx.globalAlpha = dot.life;
     ctx.fillStyle = dot.color;
     ctx.beginPath();
-    ctx.arc(dot.x, dot.y, 20 * dot.life, 0, Math.PI * 2);
+    ctx.arc(dot.x, dot.y, size.value * dot.life, 0, Math.PI * 2);
     ctx.fill();
   }
   ctx.globalAlpha = 1;
